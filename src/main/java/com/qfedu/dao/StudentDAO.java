@@ -5,4 +5,5 @@ import com.qfedu.pojo.Student;
 public interface StudentDAO {
     public int insertStudent(Student student);
     public int deleteStudent(String stuNum);
+    public int updateStudent(Student student);
 }

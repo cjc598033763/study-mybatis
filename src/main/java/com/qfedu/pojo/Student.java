@@ -10,19 +10,10 @@ import lombok.ToString;
 @ToString  // 添加toString 方法
 
 public class Student {
-     int stuId;
-
-//    public Student(int stuId, String stuNum, String stuName, String stuGender, int stuAge) {
-//        this.stuId = stuId;
-//        this.stuNum = stuNum;
-//        this.stuName = stuName;
-//        this.stuGender = stuGender;
-//        this.stuAge = stuAge;
-//    }
-
-    String stuNum;
-     String stuName;
-    String stuGender;
-     int stuAge;
+    private int stuId;
+    private String stuNum;
+    private String stuName;
+    private String stuGender;
+    private int stuAge;
 
 }
