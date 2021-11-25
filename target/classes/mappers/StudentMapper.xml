@@ -19,4 +19,38 @@
         where
             stu_num=#{stuNum}
     </update>
+<!--    resultType 指定查询结果封装的对象的实体类-->
+<!--    resultSets 指定当前操作返回的集合类型-->
+<!--    <select id = "listStudents" resultType="com.qfedu.pojo.Student">-->
+<!--        select sid stuId, stu_num stuNum,stu_name stuName,stu_gender stuGender,stu_age stuAge-->
+<!--        from tb_students-->
+<!--    </select>-->
+<!--    resultMap 标签用于定义实体类与数据表的映射关系-->
+    <resultMap id="studentMap" type="com.qfedu.pojo.Student">
+        <id column="sid" property="stuId"/>
+        <result column="stu_num" property="stuNum"/>
+        <result column="stu_name" property="stuName"/>
+        <result column="stu_gender" property="stuGender"/>
+        <result column="stu_age" property="stuAge"/>
+    </resultMap>
+<!--  resultMap 用于引用一个实体的映射关系，当配置resultMap之后 resultType-->
+    <select id = "listStudents" resultMap="studentMap">
+        select sid , stu_num ,stu_name ,stu_gender,stu_age
+        from tb_students
+    </select>
+    <select id ="queryStudent" resultMap ="studentMap">
+        select sid , stu_num ,stu_name ,stu_gender,stu_age
+        from tb_students
+        where stu_num= #{stuNum}
+    </select>
+    <select id ="listStudentsByPage" resultMap ="studentMap">
+        select sid , stu_num ,stu_name ,stu_gender,stu_age
+        from tb_students
+
+        limit #{start} ,#{pageSize}
+    </select>
+    <!--      limit #{arg0} ,#{arg1}-->
+    <select id="getCount" resultType="int">
+        select count(*) from tb_students
+    </select>
 </mapper>
