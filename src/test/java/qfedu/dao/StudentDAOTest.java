@@ -25,8 +25,10 @@ public class StudentDAOTest {
         SqlSession sqlSession = factory.openSession();
         // 通过会话获取DAO对象
         StudentDAO studentDAO = sqlSession.getMapper(StudentDAO.class);
+        Student student = new Student(9,"10010","张三","男的",1);
         // 测试StudentDAO中的方法
-        int i = studentDAO.insertStudent(new Student(9,"10009","张三","男的",1));
+        int i = studentDAO.insertStudent(student);
+        System.out.println(student);
         // 需要手动提交
         sqlSession.commit();
         System.out.println(i);
