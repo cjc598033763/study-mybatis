@@ -48,6 +48,8 @@
 <!--mappers标签载入项目中的映射文件-->
     <mappers>
         <mapper resource="mappers/StudentMapper.xml"></mapper>
+        <mapper resource="mappers/UserMapper.xml"></mapper>
+        <mapper resource="mappers/DetailMapper.xml"></mapper>
     </mappers>
 </configuration>
 
