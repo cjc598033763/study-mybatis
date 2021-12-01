@@ -7,6 +7,25 @@
         insert into users(user_name,user_pwd,user_realname,user_img)
         values(#{userName}, #{userPwd},#{userRealname},#{userImg})
     </insert>
+    <resultMap id="userMap" type="User">
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName" />
+        <result column="user_pwd" property="userPwd" />
+        <result column="user_realname" property="userRealname" />
+        <result column="user_img" property="userImg" />
+    </resultMap>
+
+    <select id="queryUser" resultMap="userMap">
+        select user_id,user_name,user_pwd,user_realname,user_img
+        from users where user_name=#{username}
+    </select>
+
+
+
+
+
+
+
 
 
 </mapper>

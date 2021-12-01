@@ -3,7 +3,9 @@ package qfedu.dao;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qfedu.dao.StudentDAO;
+import com.qfedu.dao.UserDAO;
 import com.qfedu.pojo.Student;
+import com.qfedu.pojo.User;
 import com.qfedu.utils.MyBatisUtil;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -43,7 +45,13 @@ public class StudentDAOTest {
 
 
     }
+    @org.junit.Test
+    public void testQueryUser(){
+        UserDAO userDAO = MyBatisUtil.getMapper(UserDAO.class);
+        User user =  userDAO.queryUser("wangwu");
+        System.out.println(user);
 
+    }
     @org.junit.Test
     public void deleteStudent(){
                 StudentDAO studentDAO= MyBatisUtil.getMapper(StudentDAO.class);

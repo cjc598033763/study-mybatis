@@ -15,4 +15,6 @@ public class User {
     private String userPwd;
     private String userRealname;
     private String userImg;
+
+    private Detail detail;
 }
