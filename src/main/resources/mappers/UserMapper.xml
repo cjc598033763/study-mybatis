@@ -13,11 +13,22 @@
         <result column="user_pwd" property="userPwd" />
         <result column="user_realname" property="userRealname" />
         <result column="user_img" property="userImg" />
+        <result column="detail_id" property="detail.detailId" />
+        <result column="user_addr" property="detail.userAddr" />
+        <result column="user_tel" property="detail.userTel" />
+        <result column="user_desc" property="detail.userDesc" />
     </resultMap>
 
     <select id="queryUser" resultMap="userMap">
-        select user_id,user_name,user_pwd,user_realname,user_img
-        from users where user_name=#{username}
+        select
+            user_id,user_name,user_pwd,user_realname,user_img,detail_id,user_addr,user_tel,user_desc,uid
+        from
+            users u
+                INNER JOIN
+            detail d
+            on
+                u.user_id = d.uid
+        where u.user_name=#{userName};
     </select>
 
 

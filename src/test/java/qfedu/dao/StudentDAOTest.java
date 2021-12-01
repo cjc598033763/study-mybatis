@@ -26,7 +26,7 @@ public class StudentDAOTest {
         try{
         // 通过会话获取DAO对象
         StudentDAO studentDAO = sqlSession.getMapper(StudentDAO.class);
-        Student student = new Student(10,"10020","张三","男的",1);
+        Student student = new Student(10,"10021","张三","男的",1);
         // 测试StudentDAO中的方法
         int i = studentDAO.insertStudent(student);
         System.out.println(student);

@@ -15,6 +15,7 @@
 <!--    typeAliases标签用于给实体类取别名， 在映射文件中可以直接使用别名来替代实体类的全限定名-->
     <typeAliases>
         <typeAlias type="com.qfedu.pojo.Student" alias="Student"></typeAlias>
+        <typeAlias type="com.qfedu.pojo.User" alias="User"></typeAlias>
     </typeAliases>
 <!--    plugin标签，用于配置Mybatis插件（分页插件）-->
     <plugins>

@@ -10,7 +10,7 @@ import org.junit.Test;
 public class UserDAOTest {
     @Test
     public void testInsertUser() {
-        User user = new User(0,"12312345","123124","张四","01.img");
+        User user = new User(0,"12312345","123124","张四","01.img",null);
         Detail detail = new Detail(0,"江西","88888888","我要成功一个优秀的人",0);
         SqlSession session = MyBatisUtil.getSqlSession();
         try {
@@ -28,6 +28,17 @@ public class UserDAOTest {
             e.printStackTrace();
             session.rollback();
         }
-
     }
+    @Test
+    public void testQueryUser(){
+        UserDAO userDAO = MyBatisUtil.getMapper(UserDAO.class);
+        User user  = userDAO.queryUser("1231234");
+        System.out.println(user);
+    }
+
+
+
+
+
+
 }
