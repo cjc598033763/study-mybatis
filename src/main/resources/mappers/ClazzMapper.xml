@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.ClazzDAO">
+
+    <resultMap id="classMap" type="Clazz">
+        <id  column="cid" property="classId" />
+        <result  column="cname" property="className" />
+        <result  column="cdesc" property="classDesc" />
+        <collection property="stus" select="com.qfedu.dao.StudentsDAO.listStudentsByCid" column="cid"/>
+    </resultMap>
+
+    <select id = "queryClazz" resultMap="classMap">
+            SELECT
+                cid,cname,cdesc
+            FROM
+                classes c
+            WHERE
+                cid = #{classId}
+
+
+        </select>
+<!--    <resultMap id="classMap" type="Clazz">-->
+<!--        <id  column="cid" property="classId" />-->
+<!--        <result  column="cname" property="className" />-->
+<!--        <result  column="cdesc" property="classDesc" />-->
+
+
+<!--        <collection property="stus" ofType="Students" >-->
+<!--            <result column="sid" property="stuId"/>-->
+<!--            <result column="sname" property="stuName"/>-->
+<!--            <result column="sage" property="stuAge"/>-->
+<!--        </collection>-->
+<!--    </resultMap>-->
+<!--    <select id = "queryClazz" resultMap="classMap">-->
+<!--        SELECT-->
+<!--            cid,cname,cdesc,sid,sname,sage,scid-->
+<!--        FROM-->
+<!--            classes c-->
+<!--                INNER JOIN students s ON c.cid = s.scid-->
+<!--        WHERE-->
+<!--            cid = #{classId}-->
+
+
+<!--    </select>-->
+
+</mapper>

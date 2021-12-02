@@ -16,6 +16,8 @@
     <typeAliases>
         <typeAlias type="com.qfedu.pojo.Student" alias="Student"></typeAlias>
         <typeAlias type="com.qfedu.pojo.User" alias="User"></typeAlias>
+        <typeAlias type="com.qfedu.pojo.Clazz" alias="Clazz"></typeAlias>
+        <typeAlias type="com.qfedu.pojo.Students" alias="Students"></typeAlias>
     </typeAliases>
 <!--    plugin标签，用于配置Mybatis插件（分页插件）-->
     <plugins>
@@ -51,6 +53,8 @@
         <mapper resource="mappers/StudentMapper.xml"></mapper>
         <mapper resource="mappers/UserMapper.xml"></mapper>
         <mapper resource="mappers/DetailMapper.xml"></mapper>
+        <mapper resource="mappers/ClazzMapper.xml"></mapper>
+        <mapper resource="mappers/StudentsMapper.xml"></mapper>
     </mappers>
 </configuration>
 
