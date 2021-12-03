@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.dao.StudentsDAO">
+    <resultMap id="studentMap" type="Students">
+        <id column="sid"  property="stuId" />
+        <result column="sname" property="stuName" />
+        <result column="sage" property="stuAge" />
+        <result column="scid" property="stuCid" />
+    </resultMap>
+
+    <select id = "listStudentsByCid" resultMap="studentMap">
+        select sid,sname,sage from students where scid=#{cid}
+    </select>
+
+
+</mapper>
